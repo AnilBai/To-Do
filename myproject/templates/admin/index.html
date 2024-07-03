@@ -1,0 +1,8 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+    <div>
+        {{ clear_logs_button|safe }}
+    </div>
+    {{ block.super }}
+{% endblock %}

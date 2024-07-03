@@ -1,0 +1,17 @@
+<!-- todo/templates/todo/todo_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo Form</title>
+</head>
+<body>
+    <h1>Todo Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'todo_list' %}">Cancel</a>
+</body>
+</html>

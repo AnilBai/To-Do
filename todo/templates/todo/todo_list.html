@@ -1,0 +1,22 @@
+<!-- todo/templates/todo/todo_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                {{ todo.task_name }} - {% if todo.is_complete %}Completed{% else %}Not Completed{% endif %}
+                <a href="{% url 'todo_detail' todo.pk %}">Detail</a>
+                <a href="{% url 'todo_update' todo.pk %}">Edit</a>
+                <a href="{% url 'todo_delete' todo.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'todo_create' %}">Add new todo</a>
+</body>
+</html>
